@@ -1,2 +1,2 @@
-# topcoder
-Solutions for Topcoder Challenges
+# Summary
+Solutions for Topcoder Challenges Written in Java
