@@ -1,4 +1,6 @@
-public class QuckSort {
+import java.util.Arrays;
+
+public class QuickSort {
     
     /**
      * Sorts the array using quick sort
@@ -14,7 +16,6 @@ public class QuckSort {
      */
     public static void sort(int[] input, int low, int high) {
         // TODO: argument validation
-        int len = input.length;
         if (low < high) {
             int pivotPos = partition(input, low, high);
             sort(input, low, pivotPos - 1);
@@ -38,6 +39,7 @@ public class QuckSort {
         if (elemLessThanPivot < high - low) {
             swap(input, low + elemLessThanPivot, high);
         }
+        return low + elemLessThanPivot;
     }
 
     private static void swap(int[] input, int i, int j) {
@@ -52,7 +54,7 @@ public class QuckSort {
      * Main
      */
     public static void main(String[] args) {
-        int[] testArray = new int[] {6, 3, 7, 2, 5, 1, 8};
+        int[] testArray = new int[] {4, 6, 3, 7, 2, 5, 1, 8};
         sort(testArray);
         // add sanity test
         System.out.println(Arrays.toString(testArray));
