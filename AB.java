@@ -59,6 +59,9 @@ public class AB {
     
     public static void main(String[] args) {
         // Run "java AB 5 3"
+        if (args.length != 2) {
+            args = new String[] {"5", "3"};
+        }
         System.out.println(createString(Integer.parseInt(args[0]), Integer.parseInt(args[1])));
     }
 }
