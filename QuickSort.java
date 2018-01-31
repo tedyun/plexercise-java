@@ -54,7 +54,7 @@ public class QuickSort {
      * Main
      */
     public static void main(String[] args) {
-        int[] testArray = new int[] {4, 6, 3, 7, 2, 5, 1, 8};
+        int[] testArray = new int[] {4, 6, 3, 3, 7, 2, 9, 4, 5, 1, 8};
         sort(testArray);
         // add sanity test
         System.out.println(Arrays.toString(testArray));
