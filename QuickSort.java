@@ -17,7 +17,7 @@ public class QuickSort {
     public static void sort(int[] input, int low, int high) {
         // TODO: argument validation
         if (low < high) {
-            int pivotPos = partition(input, low, high);
+            int pivotPos = partition2(input, low, high);
             sort(input, low, pivotPos - 1);
             sort(input, pivotPos + 1, high);
         }
@@ -40,6 +40,28 @@ public class QuickSort {
             swap(input, low + elemLessThanPivot, high);
         }
         return low + elemLessThanPivot;
+    }
+
+    /**
+     * Different way of partitioning
+     */
+    private static int partition2(int[] input, int low, int high) {
+        int pivot = input[low];
+        int i = low, j = high + 1;
+        while (true) {
+            while (input[++i] < pivot) {
+                if (i == high) break;
+            }
+            while (input[--j] > pivot) {
+                if (j == low) break;
+            }
+            if (i >= j) {
+                break;
+            }
+            swap(input, i, j);
+        }
+        swap(input, low, j);
+        return j;
     }
 
     private static void swap(int[] input, int i, int j) {
