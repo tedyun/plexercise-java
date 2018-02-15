@@ -117,36 +117,31 @@ class Heap {
 
 public class HeapSort {
 
+    public static void sort(int[] input) {
+        Heap heap = new Heap();
+        for (int i = 0; i < input.length; i++) {
+            heap.add(input[i]);
+        }
+        int j = 1;
+        try {
+            while (heap.size() > 0) {
+                input[input.length - (j++)] = heap.remove();
+            }
+        } catch (Exception e) {
+            System.out.println("Something is wrong.");
+        } finally {
+            // do nothing
+        }
+    }
+
     /**
      * Main
      */
     public static void main(String[] args) {
         System.out.println("HeapSort class");
-        Heap heap = new Heap();
-        try {
-            System.out.println("Adding 3");
-            heap.add(3);
-            System.out.println("Adding 4");
-            heap.add(4);
-            System.out.println("Adding 2");
-            heap.add(2);
-            System.out.println(Arrays.toString(heap.getArray()));
-            System.out.println("Size: " + heap.size());
-            System.out.println("Removing " + heap.remove());
-            System.out.println("Adding 7");
-            heap.add(7);
-            System.out.println("Adding 4");
-            heap.add(4);
-            System.out.println("Adding 2");
-            heap.add(2);
-            System.out.println("Removing " + heap.remove());
-            System.out.println("Adding 9");
-            heap.add(9);
-            System.out.println("Removing " + heap.remove());
-            System.out.println(Arrays.toString(heap.getArray()));
-            System.out.println("Size: " + heap.size());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        int[] testArray = new int[] {4, 6, 3, 3, 7, 2, 9, 4, 5, 1, 8};
+        sort(testArray);
+        // add sanity test
+        System.out.println(Arrays.toString(testArray));
     }
 }
