@@ -1,2 +1,2 @@
 # Summary
-Solutions for Topcoder Challenges Written in Java
+Algorithm Exercises Written in Java
