@@ -1,4 +1,4 @@
-public class BinarySearch{
+public class BinarySearch {
     public static int binarySearch(int[] a, int x) {
         int low = 0, high = a.length - 1;
         while (low < high) {
@@ -18,7 +18,7 @@ public class BinarySearch{
         return -1;
     }
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         int[] a = new int[] {1, 1, 2, 3, 5, 6, 7, 8, 9, 11, 24, 27, 35, 36, 50};
         System.out.println(binarySearch(a, 2));
     }
